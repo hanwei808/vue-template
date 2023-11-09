@@ -17,20 +17,20 @@
 ## 项目结构
 
 > public：不需要编译构建的纯静态资源
-> src：需编译构建的源码目录
-> > api：接口请求
-> > assets：静态资源
-> > components：公共组件
-> > composables：组合式API
-> > layout：页面布局模板
-> > plugins：插件
-> > router：路由
-> > store：Vuex存储
-> > styles：样式
-> > utils：工具模块
-> > views：页面
-> > App.vue：根组件
-> > main.ts：入口模块，挂载根组件
+> **src**：需编译构建的源码目录
+> > **api**：接口请求
+> > **assets**：静态资源
+> > **components**：公共组件
+> > **composables**：组合式API
+> > **layout**：页面布局模板
+> > **plugins**：插件
+> > **router**：路由
+> > **store**：Vuex存储
+> > **styles**：样式
+> > **utils**：工具模块
+> > **views**：页面
+> > **App.vue**：根组件
+> > **main.ts**：入口模块，挂载根组件
 >
 > .gitignore：git忽略文件
 > index.html：单页面应用的入口文件
@@ -116,6 +116,48 @@
         ]
     })
 ```
+
+---
+
+## 配置转换 JSX/TSX
+
+安装插件 [plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
+
+```JavaScript
+    npm i -D @vitejs/plugin-vue-jsx
+```
+
+配置插件
+
+```JavaScript
+    // vite.config.js
+    import vueJsx from '@vitejs/plugin-vue-jsx'
+
+    defineConfig({
+        ...
+        plugins: [
+            ...
+            vueJsx({
+            // options are passed on to @vue/babel-plugin-jsx
+            })
+        ]
+    })
+```
+
+配置 ESLint
+
+```JavaScript
+    // .eslintrc.cjs
+    "parserOptions": {
+        ...
+        "extraFileExtensions": ['.vue'],
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
+```
+
+[bable-plugin-jsx 语法文档](https://github.com/vuejs/babel-plugin-jsx/blob/main/packages/babel-plugin-jsx/README-zh_CN.md)
 
 ---
 

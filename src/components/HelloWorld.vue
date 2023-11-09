@@ -1,9 +1,11 @@
-<script setup lang="ts">
+<script setup lang="tsx">
 import { ref } from 'vue'
+import { Bar } from './bar.jsx'
 
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+const Abc = <h1>ABC</h1>
 </script>
 
 <template>
@@ -16,6 +18,7 @@ const count = ref(0)
     >
       count is {{ count }}
     </button>
+    <Bar /><Abc />
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
@@ -46,4 +49,4 @@ const count = ref(0)
 .read-the-docs {
   color: #888;
 }
-</style>
+</style>./bar
