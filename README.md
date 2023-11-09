@@ -28,6 +28,13 @@
 > > **router**：路由
 > > **store**：Vuex 存储
 > > **styles**：样式
+> >
+> > > common.scss：全局公共样式
+> > > index.scss：组织统一导出
+> > > mixin.scss：全局 mixin
+> > > transition.scss：全局过渡动画样式
+> > > variables.scss：全局变量
+> >
 > > **utils**：工具模块
 > > **views**：页面
 > > **App.vue**：根组件
@@ -200,6 +207,82 @@
         ...
     }
     }
+```
+
+---
+
+## 配置路径别名
+
+安装 TS 支持
+
+```JavaScript
+    npm i -D @types/node
+```
+
+配置别名
+
+```JavaScript
+    // vite.config.ts
+    import path from 'path'
+
+    defineConfig({
+        ...
+        resolve: {
+            alias: {
+                '@': path.join(__dirname, 'src')
+            }
+        }
+    })
+```
+
+配置 TS 处理
+
+```JavaScript
+    // tsconfig.json
+    {
+        "compilerOptions": {
+            ...
+            "paths": {
+                ...
+                "@/*": ["src/*"]
+            }
+        }
+    }
+
+```
+
+---
+
+## CSS 样式管理
+
+安装 SASS
+
+```JavaScript
+    npm install -D sass
+```
+
+新建文件 src/styles
+
+- common.scss：全局公共样式
+- index.scss：组织统一导出
+- mixin.scss：全局 mixin
+- transition.scss：全局过渡动画样式
+- variables.scss：全局变量
+
+配置
+
+```JavaScript
+    // vite.config.ts
+    defineConfig({
+        ...
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@import "@/styles/index.scss";`
+                }
+            }
+        }
+    })
 ```
 
 ---

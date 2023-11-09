@@ -22,7 +22,8 @@
 
     "types": ["vite/client"],
     "paths": {
-      "vuex": ["./node_modules/vuex/types"]
+      "vuex": ["./node_modules/vuex/types"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

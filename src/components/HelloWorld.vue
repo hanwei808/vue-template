@@ -27,8 +27,8 @@ const Abc = defineComponent({
   </div>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
+<style scoped lang="scss">
+.card {
+  color: $color;
 }
 </style>
