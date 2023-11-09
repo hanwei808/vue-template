@@ -18,29 +18,34 @@
 
 > public：不需要编译构建的纯静态资源
 > **src**：需编译构建的源码目录
+>
 > > **api**：接口请求
 > > **assets**：静态资源
 > > **components**：公共组件
-> > **composables**：组合式API
+> > **composables**：组合式 API
 > > **layout**：页面布局模板
 > > **plugins**：插件
 > > **router**：路由
-> > **store**：Vuex存储
+> > **store**：Vuex 存储
 > > **styles**：样式
 > > **utils**：工具模块
 > > **views**：页面
 > > **App.vue**：根组件
 > > **main.ts**：入口模块，挂载根组件
 >
-> .gitignore：git忽略文件
+> .gitignore：git 忽略文件
 > index.html：单页面应用的入口文件
 > package.json：项目配置文件
-> tsconfig.json：TypeScript配置文件
-> vite.config.ts：Vite配置文件
+> tsconfig.json：TypeScript 配置文件
+> vite.config.ts：Vite 配置文件
 
 ---
 
 ## 配置 ESLint
+
+[ESLint 官方文档](https://eslint.nodejs.cn/docs/latest/use/getting-started)
+[Standard 代码风格规范文档](https://standardjs.com/readme-zhcn)
+[eslint-plugin-vue 文档](https://eslint.vuejs.org/user-guide/)
 
 ### 安装 ESLint
 
@@ -48,8 +53,6 @@
     npm install eslint --save-dev
     npx eslint --init
 ```
-
-[Standard 代码风格规范文档](https://standardjs.com/readme-zhcn)
 
 ### 配置 ESLint 脚本
 
@@ -73,13 +76,11 @@
     ]
 ```
 
-[eslint-plugin-vue 文档](https://eslint.vuejs.org/user-guide/)
-
 ### 问题
 
 如果看到不符合规范的错误提示，如何按照项目中的 ESLint 规则要求进行格式化？
 
-在VSCode中：
+在 VSCode 中：
 
 1. 卸载/禁用 Vetur 插件
 2. 安装 ESLint 插件
@@ -92,11 +93,11 @@
 - eslint.format.enable 设置为 true
 - eslint.run 设置为 onType
 - 配置默认格式化程序为 ESLint
-  - 在js,jsx,vue,ts,tsx文件中右键，选择[使用...格式化文档] -> 选择 [ESLint]
+  - 在 js,jsx,vue,ts,tsx 文件中右键，选择[使用...格式化文档] -> 选择 [ESLint]
 
 ### 在开发和构建配置 ESLint
 
-安装 [vite-plugin-eslint](https://github.com/gxmari007/vite-plugin-eslint)
+安装 [vite-plugin-eslint 官方文档](https://github.com/gxmari007/vite-plugin-eslint)
 
 ```JavaScript
     npm install vite-plugin-eslint --save-dev
@@ -121,7 +122,9 @@
 
 ## 配置转换 JSX/TSX
 
-安装插件 [plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
+安装插件 [plugin-vue-jsx 官方文档](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
+
+[bable-plugin-jsx 语法文档](https://github.com/vuejs/babel-plugin-jsx/blob/main/packages/babel-plugin-jsx/README-zh_CN.md)
 
 ```JavaScript
     npm i -D @vitejs/plugin-vue-jsx
@@ -157,16 +160,46 @@
     }
 ```
 
-[bable-plugin-jsx 语法文档](https://github.com/vuejs/babel-plugin-jsx/blob/main/packages/babel-plugin-jsx/README-zh_CN.md)
-
 ---
 
 ## 配置 VueRouter
 
-安装 [vue-router](https://router.vuejs.org/zh/guide/)
+安装 [vue-router 官方文档](https://router.vuejs.org/zh/guide/)
 
 ```JavaScript
     npm install vue-router@4
+```
+
+配置 src/router/index.ts 文件
+
+---
+
+## 配置 Vuex
+
+安装 [Vuex 官方文档](https://vuex.vuejs.org/zh/index.html)
+
+```JavaScript
+    npm install vuex@next --save
+```
+
+配置
+
+- src/store/index.ts
+- src/vuex.d.ts 增加 TypeScript 支持
+
+解决 TS 中引入 vuex4 会提示 ‘无法找到模块“vuex”的声明文件。
+
+```JavaScript
+    // tsconfig.json
+    {
+    "compilerOptions": {
+        ...
+        "paths": {
+            "vuex": ["./node_modules/vuex/types"]
+        }
+        ...
+    }
+    }
 ```
 
 ---

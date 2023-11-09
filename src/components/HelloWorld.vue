@@ -1,11 +1,15 @@
 <script setup lang="tsx">
-import { ref } from 'vue'
+import { ref, defineComponent } from 'vue'
 import { Bar } from './bar.jsx'
 
 defineProps<{ msg: string }>()
 
 const count = ref(0)
-const Abc = <h1>ABC</h1>
+const Abc = defineComponent({
+  setup() {
+    return () => <h1>TSX ABC</h1>
+  }
+})
 </script>
 
 <template>
@@ -20,34 +24,11 @@ const Abc = <h1>ABC</h1>
     </button>
     <Bar />
     <Abc />
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
   </div>
-
-  <p>
-    Check out
-    <a
-      href="https://vuejs.org/guide/quick-start.html#local"
-      target="_blank"
-    >create-vue</a>, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a
-      href="https://github.com/vuejs/language-tools"
-      target="_blank"
-    >Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">
-    Click on the Vite and Vue logos to learn more
-  </p>
 </template>
 
 <style scoped>
 .read-the-docs {
   color: #888;
 }
-</style>./bar
+</style>
