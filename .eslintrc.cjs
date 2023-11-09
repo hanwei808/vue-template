@@ -14,10 +14,16 @@ module.exports = {
                 "node": true
             },
             "files": [
-                ".eslintrc.{js,cjs}"
+                ".eslintrc.{js,cjs}",
             ],
             "parserOptions": {
                 "sourceType": "script"
+            }
+        },
+        {
+            "files": ['src/api/**/*.ts'],
+            "rules": {
+                "camelcase": 'off'
             }
         }
     ],

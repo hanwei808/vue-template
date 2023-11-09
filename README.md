@@ -23,6 +23,7 @@
 > > **assets**：静态资源
 > > **components**：公共组件
 > > **composables**：组合式 API
+> > env：环境变量配置
 > > **layout**：页面布局模板
 > > **plugins**：插件
 > > **router**：路由
@@ -125,6 +126,37 @@
     })
 ```
 
+### 配置保存文件自动格式化
+
+VSCode 安装 Prettier 插件
+
+配置
+
+````Json
+    // VSCode settings.json
+    {
+        ...
+        "eslint.format.enable": true,
+        "[vue]": {
+            "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        },
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        //针对共用的语言如JS、TS和JSX关闭文件保存自动格式化功能，通过eslint来做这件事
+        "[javascript]": {
+            "editor.formatOnSave": false
+        },
+        "[javascriptreact]": {
+            "editor.formatOnSave": false
+        },
+        "[typescript]": {
+            "editor.formatOnSave": false
+        },
+        "editor.codeActionsOnSave": {
+            //告诉ESLint插件在保存时运行
+            "source.fixAll.eslint": true
+        }
+    }
 ---
 
 ## 配置转换 JSX/TSX
@@ -135,7 +167,7 @@
 
 ```JavaScript
     npm i -D @vitejs/plugin-vue-jsx
-```
+````
 
 配置插件
 
@@ -284,6 +316,23 @@
         }
     })
 ```
+
+---
+
+## 封装 Axios
+
+安装 [Axios 官方文档](https://axios-http.com/zh/docs/intro)
+
+```JavaScript
+    npm install axios
+```
+
+封装 utils/request.ts
+封装 /api/common.ts
+封装 /api/types/common.ts
+
+配置环境变量
+[Vite 环境变量配置](https://cn.vitejs.dev/guide/env-and-mode.html)
 
 ---
 
