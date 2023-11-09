@@ -18,7 +18,8 @@ const Abc = <h1>ABC</h1>
     >
       count is {{ count }}
     </button>
-    <Bar /><Abc />
+    <Bar />
+    <Abc />
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR

@@ -161,6 +161,16 @@
 
 ---
 
+## 配置 VueRouter
+
+安装 [vue-router](https://router.vuejs.org/zh/guide/)
+
+```JavaScript
+    npm install vue-router@4
+```
+
+---
+
 ## Git Commit 规范
 
 暂不配置
