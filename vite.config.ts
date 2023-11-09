@@ -6,6 +6,15 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    proxy: {
+      // 使用 proxy 实例
+      '/admin': {
+        target: 'http://baidu.com/api',
+        changeOrigin: true
+      },
+    },
+  },
   plugins: [
     vue(),
     eslintPlugin({
