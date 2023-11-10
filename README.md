@@ -205,7 +205,9 @@ VSCode 安装 Prettier 插件
 
 ## 配置 VueRouter
 
-安装 [vue-router 官方文档](https://router.vuejs.org/zh/guide/)
+[vue-router 官方文档](https://router.vuejs.org/zh/guide/)
+
+安装
 
 ```JavaScript
     npm install vue-router@4
@@ -217,7 +219,9 @@ VSCode 安装 Prettier 插件
 
 ## 配置 Vuex
 
-安装 [Vuex 官方文档](https://vuex.vuejs.org/zh/index.html)
+[Vuex 官方文档](https://vuex.vuejs.org/zh/index.html)
+
+安装
 
 ```JavaScript
     npm install vuex@next --save
@@ -289,7 +293,9 @@ VSCode 安装 Prettier 插件
 
 ## CSS 样式管理
 
-安装 SASS
+[SASS 官方文档](https://sass.nodejs.cn/guide/#variables)
+
+安装
 
 ```JavaScript
     npm install -D sass
@@ -323,7 +329,9 @@ VSCode 安装 Prettier 插件
 
 ## 封装 Axios
 
-安装 [Axios 官方文档](https://axios-http.com/zh/docs/intro)
+[Axios 官方文档](https://axios-http.com/zh/docs/intro)
+
+安装
 
 ```JavaScript
     npm install axios
