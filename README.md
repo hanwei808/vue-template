@@ -132,7 +132,7 @@ VSCode 安装 Prettier 插件
 
 配置
 
-````Json
+```Json
     // VSCode settings.json
     {
         ...
@@ -157,6 +157,8 @@ VSCode 安装 Prettier 插件
             "source.fixAll.eslint": true
         }
     }
+```
+
 ---
 
 ## 配置转换 JSX/TSX
@@ -167,7 +169,7 @@ VSCode 安装 Prettier 插件
 
 ```JavaScript
     npm i -D @vitejs/plugin-vue-jsx
-````
+```
 
 配置插件
 
