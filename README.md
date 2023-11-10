@@ -334,6 +334,29 @@ VSCode 安装 Prettier 插件
 配置环境变量
 [Vite 环境变量配置](https://cn.vitejs.dev/guide/env-and-mode.html)
 
+```JavaScript
+    // 使用环境变量
+    import.meta.env.VITE_APP_BASE_API
+```
+
+配置跨域
+
+```JavaScript
+    // vite.config.ts
+    defineConfig({
+        ...
+        server: {
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:3000',
+                    changeOrigin: true,
+                    rewrite: (path) => path.replace(/^\/api/, '')
+                }
+            }
+        }
+    })
+```
+
 ---
 
 ## Git Commit 规范
